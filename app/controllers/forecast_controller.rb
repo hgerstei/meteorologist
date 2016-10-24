@@ -19,7 +19,7 @@ class ForecastController < ApplicationController
 @url = "https://api.darksky.net/forecast/3fae4268941ae87cbeb42d5c856a25c1/" + @lat + "," + @lng
 @parsed_data = JSON.parse(open(@url).read)
 
-    @current_temperature = @parsed_data["currently"][0]["temperature"]
+    @current_temperature = @parsed_data["currently"]["temperature"]
 
     @current_summary = "Replace this string with your answer."
 

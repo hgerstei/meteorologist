@@ -20,9 +20,6 @@ class GeocodingController < ApplicationController
 @url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + @street_address_without_spaces + "&key="
 @raw_data = open(@url).read
 @parsed_data = JSON.parse(@raw_data)
-@results = @parsed_data["results"]
-@first = @results[0]
-@geometry = @first["geometry"]
 
 @latitude = @parsed_data["results"][0]["geometry"]["location"]["lat"]
 
